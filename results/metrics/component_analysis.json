@@ -1,0 +1,456 @@
+{
+  "sobel_lambda": {
+    "per_run": [
+      {
+        "run": "abl/7_chunk_attention_seed1337",
+        "lambda": 0.9960300326347351
+      },
+      {
+        "run": "abl/7_chunk_attention_seed2024",
+        "lambda": 0.9969832301139832
+      },
+      {
+        "run": "abl/7_chunk_attention_seed42",
+        "lambda": 0.9950923323631287
+      },
+      {
+        "run": "abl/8_chunk_attention_no_sobel_seed1337",
+        "lambda": 1.0
+      },
+      {
+        "run": "abl/8_chunk_attention_no_sobel_seed2024",
+        "lambda": 1.0
+      },
+      {
+        "run": "abl/8_chunk_attention_no_sobel_seed42",
+        "lambda": 1.0
+      },
+      {
+        "run": "capacity/sage_005",
+        "lambda": 0.9945642948150635
+      },
+      {
+        "run": "capacity/sage_010",
+        "lambda": 0.9966756105422974
+      },
+      {
+        "run": "capacity/sage_015",
+        "lambda": 0.9939602017402649
+      },
+      {
+        "run": "capacity/sage_025",
+        "lambda": 0.9953802824020386
+      },
+      {
+        "run": "capacity/sage_050",
+        "lambda": 0.9902973175048828
+      },
+      {
+        "run": "component/full_sage_010_seed1337",
+        "lambda": 0.9948718547821045
+      },
+      {
+        "run": "component/full_sage_010_seed2024",
+        "lambda": 0.9942689538002014
+      },
+      {
+        "run": "component/full_sage_010_seed42",
+        "lambda": 0.9952806234359741
+      },
+      {
+        "run": "design/compress_128_seed1337",
+        "lambda": 0.9981511831283569
+      },
+      {
+        "run": "design/compress_128_seed2024",
+        "lambda": 0.995621383190155
+      },
+      {
+        "run": "design/compress_128_seed42",
+        "lambda": 0.9956562519073486
+      },
+      {
+        "run": "design/compress_256_seed1337",
+        "lambda": 0.9962206482887268
+      },
+      {
+        "run": "design/compress_256_seed2024",
+        "lambda": 0.9968546628952026
+      },
+      {
+        "run": "design/compress_256_seed42",
+        "lambda": 0.9990997314453125
+      },
+      {
+        "run": "design/compress_32_seed1337",
+        "lambda": 0.9962956309318542
+      },
+      {
+        "run": "design/compress_32_seed2024",
+        "lambda": 1.0000805854797363
+      },
+      {
+        "run": "design/compress_32_seed42",
+        "lambda": 0.9961533546447754
+      },
+      {
+        "run": "design/contrast_histeq_seed1337",
+        "lambda": 1.0024932622909546
+      },
+      {
+        "run": "design/contrast_histeq_seed2024",
+        "lambda": 0.9959706664085388
+      },
+      {
+        "run": "design/contrast_histeq_seed42",
+        "lambda": 1.0001639127731323
+      },
+      {
+        "run": "design/contrast_none_seed1337",
+        "lambda": 0.996218204498291
+      },
+      {
+        "run": "design/contrast_none_seed2024",
+        "lambda": 0.9954536557197571
+      },
+      {
+        "run": "design/contrast_none_seed42",
+        "lambda": 0.9946249723434448
+      },
+      {
+        "run": "design/res_112_seed1337",
+        "lambda": 0.996168851852417
+      },
+      {
+        "run": "design/res_112_seed2024",
+        "lambda": 0.9949812293052673
+      },
+      {
+        "run": "design/res_112_seed42",
+        "lambda": 0.9951523542404175
+      },
+      {
+        "run": "design/res_200_seed1337",
+        "lambda": 0.9966297745704651
+      },
+      {
+        "run": "design/res_200_seed2024",
+        "lambda": 0.9983646273612976
+      },
+      {
+        "run": "design/res_200_seed42",
+        "lambda": 0.9952263832092285
+      },
+      {
+        "run": "design/topk_4_seed1337",
+        "lambda": 0.9996321201324463
+      },
+      {
+        "run": "design/topk_4_seed2024",
+        "lambda": 1.0001131296157837
+      },
+      {
+        "run": "design/topk_4_seed42",
+        "lambda": 0.9960123300552368
+      },
+      {
+        "run": "design/topk_8_seed1337",
+        "lambda": 0.9955222010612488
+      },
+      {
+        "run": "design/topk_8_seed2024",
+        "lambda": 0.9974279403686523
+      },
+      {
+        "run": "design/topk_8_seed42",
+        "lambda": 0.9948563575744629
+      },
+      {
+        "run": "main/sage_he_seed1337",
+        "lambda": 0.9925663471221924
+      },
+      {
+        "run": "main/sage_he_seed2024",
+        "lambda": 0.9937351942062378
+      },
+      {
+        "run": "main/sage_he_seed42",
+        "lambda": 0.9923849105834961
+      },
+      {
+        "run": "optuna/trial_000",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_001",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_002",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_003",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_004",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_005",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_006",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_007",
+        "lambda": 1.005069613456726
+      },
+      {
+        "run": "optuna/trial_008",
+        "lambda": 0.9986674785614014
+      },
+      {
+        "run": "optuna/trial_009",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_010",
+        "lambda": 0.9997720718383789
+      },
+      {
+        "run": "optuna/trial_011",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_012",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_013",
+        "lambda": 1.0
+      },
+      {
+        "run": "optuna/trial_014",
+        "lambda": 0.9955429434776306
+      }
+    ],
+    "mean": 0.997148012476308,
+    "min": 0.9902973175048828,
+    "max": 1.005069613456726,
+    "initialised_at": 1.0,
+    "max_abs_drift_from_init": 0.009702682495117188,
+    "verdict": "lambda does not meaningfully move from its initialisation of 1.0 in any run. A single unregularised scalar inside a 4.7M-parameter network receives too little gradient pressure to act as a readout of the prior's usefulness. The with/without-Sobel ablation control is the informative experiment, not lambda."
+  },
+  "ablation_contrasts": {
+    "local_branch_value (dual_gated \u2212 global_only)": {
+      "seeds": [
+        42,
+        1337,
+        2024
+      ],
+      "a_mean": 0.93458021096522,
+      "b_mean": 0.9063466441071172,
+      "per_seed": {
+        "42": {
+          "a": 0.9327764198418405,
+          "b": 0.9215688561076675,
+          "delta": -0.011207563734172976
+        },
+        "1337": {
+          "a": 0.9318634156146125,
+          "b": 0.8729010029223833,
+          "delta": -0.05896241269222924
+        },
+        "2024": {
+          "a": 0.9391007974392073,
+          "b": 0.9245700732913008,
+          "delta": -0.01453072414790646
+        }
+      },
+      "per_seed_delta": [
+        -0.011207563734172976,
+        -0.05896241269222924,
+        -0.01453072414790646
+      ],
+      "mean_delta": -0.028233566858102892,
+      "median_delta": -0.01453072414790646,
+      "all_same_sign": true,
+      "collapsed_seeds": [],
+      "mean_delta_excluding_collapsed": -0.028233566858102892,
+      "n": 3,
+      "n_healthy": 3
+    },
+    "chunk_attention_value (7 \u2212 6)": {
+      "seeds": [
+        42,
+        1337,
+        2024
+      ],
+      "a_mean": 0.9063466441071172,
+      "b_mean": 0.8937686128866503,
+      "per_seed": {
+        "42": {
+          "a": 0.9215688561076675,
+          "b": 0.8855921855921857,
+          "delta": -0.03597667051548181
+        },
+        "1337": {
+          "a": 0.8729010029223833,
+          "b": 0.8621858236153738,
+          "delta": -0.010715179307009493
+        },
+        "2024": {
+          "a": 0.9245700732913008,
+          "b": 0.9335278294523915,
+          "delta": 0.008957756161090735
+        }
+      },
+      "per_seed_delta": [
+        -0.03597667051548181,
+        -0.010715179307009493,
+        0.008957756161090735
+      ],
+      "mean_delta": -0.012578031220466857,
+      "median_delta": -0.010715179307009493,
+      "all_same_sign": false,
+      "collapsed_seeds": [],
+      "mean_delta_excluding_collapsed": -0.012578031220466857,
+      "n": 3,
+      "n_healthy": 3
+    },
+    "sobel_prior_value (7 \u2212 8)": {
+      "seeds": [
+        42,
+        1337,
+        2024
+      ],
+      "a_mean": 0.6782462845790623,
+      "b_mean": 0.8937686128866503,
+      "per_seed": {
+        "42": {
+          "a": 0.9232610439208918,
+          "b": 0.8855921855921857,
+          "delta": -0.037668858328706145
+        },
+        "1337": {
+          "a": 0.19009110096429338,
+          "b": 0.8621858236153738,
+          "delta": 0.6720947226510804
+        },
+        "2024": {
+          "a": 0.921386708852002,
+          "b": 0.9335278294523915,
+          "delta": 0.012141120600389521
+        }
+      },
+      "per_seed_delta": [
+        -0.037668858328706145,
+        0.6720947226510804,
+        0.012141120600389521
+      ],
+      "mean_delta": 0.2155223283075879,
+      "median_delta": 0.012141120600389521,
+      "all_same_sign": false,
+      "collapsed_seeds": [
+        1337
+      ],
+      "mean_delta_excluding_collapsed": -0.012763868864158312,
+      "n": 3,
+      "n_healthy": 2
+    },
+    "full_vs_backbone (7 \u2212 2)": {
+      "seeds": [
+        42,
+        1337,
+        2024
+      ],
+      "a_mean": 0.93458021096522,
+      "b_mean": 0.8937686128866503,
+      "per_seed": {
+        "42": {
+          "a": 0.9327764198418405,
+          "b": 0.8855921855921857,
+          "delta": -0.04718423424965479
+        },
+        "1337": {
+          "a": 0.9318634156146125,
+          "b": 0.8621858236153738,
+          "delta": -0.06967759199923873
+        },
+        "2024": {
+          "a": 0.9391007974392073,
+          "b": 0.9335278294523915,
+          "delta": -0.0055729679868157245
+        }
+      },
+      "per_seed_delta": [
+        -0.04718423424965479,
+        -0.06967759199923873,
+        -0.0055729679868157245
+      ],
+      "mean_delta": -0.040811598078569745,
+      "median_delta": -0.04718423424965479,
+      "all_same_sign": true,
+      "collapsed_seeds": [],
+      "mean_delta_excluding_collapsed": -0.040811598078569745,
+      "n": 3,
+      "n_healthy": 3
+    }
+  },
+  "component_study": {
+    "10%": {
+      "seeds": [
+        42,
+        1337,
+        2024
+      ],
+      "a_mean": 0.9880563219798354,
+      "b_mean": 0.9935327361142315,
+      "per_seed": {
+        "42": {
+          "a": 0.9972220293075909,
+          "b": 0.9916649301133701,
+          "delta": -0.00555709919422076
+        },
+        "1337": {
+          "a": 0.9916614550760893,
+          "b": 1.0,
+          "delta": 0.008338544923910729
+        },
+        "2024": {
+          "a": 0.9752854815558257,
+          "b": 0.9889332782293246,
+          "delta": 0.013647796673498913
+        }
+      },
+      "per_seed_delta": [
+        -0.00555709919422076,
+        0.008338544923910729,
+        0.013647796673498913
+      ],
+      "mean_delta": 0.005476414134396294,
+      "median_delta": 0.008338544923910729,
+      "all_same_sign": false,
+      "collapsed_seeds": [],
+      "mean_delta_excluding_collapsed": 0.005476414134396294,
+      "n": 3,
+      "n_healthy": 3
+    }
+  },
+  "headline": {
+    "full_minus_backbone_by_fraction": {
+      "5%": -0.040811598078569745,
+      "10%": 0.005476414134396294
+    },
+    "materiality_threshold_macro_f1": 0.01,
+    "material_deltas": {
+      "5%": -0.040811598078569745
+    },
+    "helps_anywhere": false,
+    "statement": "The full SAGE-HE architecture never *materially* outperforms its own EfficientNet-B0 backbone at any training-set size measured. It is materially worse at 5% (-4.08 pts); at 10% (+0.55 pts) the gap falls inside the seed-to-seed spread and changes sign across seeds, because both arms are approaching the dataset's ceiling. The proposed components are therefore clearly harmful when labelled data is scarce, and indistinguishable from the bare backbone once it is not. No measured regime shows a reliable benefit."
+  }
+}

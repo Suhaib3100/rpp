@@ -1,0 +1,81 @@
+{
+  "before": {
+    "name": "main/jia_baseline_seed42",
+    "label": "Jia et al. (2023), reproduced"
+  },
+  "after": {
+    "name": "main/sage_he_seed42",
+    "label": "SAGE-HE (proposed)"
+  },
+  "mcnemar": {
+    "n": 360,
+    "both_correct": 341,
+    "only_a_correct": 0,
+    "only_b_correct": 19,
+    "both_wrong": 0,
+    "n_discordant": 19,
+    "statistic": 0.0,
+    "p_value": 3.814697265625e-06,
+    "method": "exact binomial",
+    "accuracy_a": 0.9472222222222222,
+    "accuracy_b": 1.0,
+    "accuracy_delta": 0.05277777777777781,
+    "odds_ratio": null,
+    "significant_at_05": true
+  },
+  "accuracy_delta_ci95": [
+    0.030555555555555555,
+    0.07777777777777778
+  ],
+  "per_class": [
+    {
+      "class": "crazing",
+      "before_f1": 0.9830508474576272,
+      "after_f1": 1.0,
+      "delta_f1": 0.016949152542372836,
+      "before_recall": 0.9666666666666667,
+      "after_recall": 1.0
+    },
+    {
+      "class": "inclusion",
+      "before_f1": 0.8695652173913043,
+      "after_f1": 1.0,
+      "delta_f1": 0.13043478260869568,
+      "before_recall": 0.8333333333333334,
+      "after_recall": 1.0
+    },
+    {
+      "class": "patches",
+      "before_f1": 0.9830508474576272,
+      "after_f1": 1.0,
+      "delta_f1": 0.016949152542372836,
+      "before_recall": 0.9666666666666667,
+      "after_recall": 1.0
+    },
+    {
+      "class": "pitted_surface",
+      "before_f1": 0.9047619047619048,
+      "after_f1": 1.0,
+      "delta_f1": 0.09523809523809523,
+      "before_recall": 0.95,
+      "after_recall": 1.0
+    },
+    {
+      "class": "rolled-in_scale",
+      "before_f1": 1.0,
+      "after_f1": 1.0,
+      "delta_f1": 0.0,
+      "before_recall": 1.0,
+      "after_recall": 1.0
+    },
+    {
+      "class": "scratches",
+      "before_f1": 0.943089430894309,
+      "after_f1": 1.0,
+      "delta_f1": 0.05691056910569103,
+      "before_recall": 0.9666666666666667,
+      "after_recall": 1.0
+    }
+  ],
+  "note": "Both models were evaluated on the identical 360-image held-out test split, so the comparison is paired and McNemar's test is the correct choice. The bootstrap CI resamples images, keeping each image's pair of predictions together."
+}

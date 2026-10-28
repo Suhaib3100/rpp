@@ -1,0 +1,32 @@
+[
+  {
+    "class": "crazing",
+    "max_weight": 0.25202834606170654,
+    "concentration": 0.14761649010603228
+  },
+  {
+    "class": "inclusion",
+    "max_weight": 0.6427711248397827,
+    "concentration": 0.4227608702970863
+  },
+  {
+    "class": "patches",
+    "max_weight": 0.1596633344888687,
+    "concentration": 0.12176233820182625
+  },
+  {
+    "class": "pitted_surface",
+    "max_weight": 0.14665251970291138,
+    "concentration": 0.036827330212021336
+  },
+  {
+    "class": "rolled-in_scale",
+    "max_weight": 0.22340422868728638,
+    "concentration": 0.12232988094967356
+  },
+  {
+    "class": "scratches",
+    "max_weight": 0.2603762745857239,
+    "concentration": 0.15963996921050205
+  }
+]

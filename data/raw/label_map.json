@@ -1,0 +1,24 @@
+{
+  "_comment": "Class index -> NEU-CLS defect name. The Hugging Face parquet mirror carries bare int64 labels with no class names, so this mapping was resolved independently and must not be taken on faith from the mirror.",
+  "_evidence": [
+    "Visual inspection of 8 samples per index against the published visual description of each NEU-CLS defect type (see .context/verify/class_contact_sheet.png, reproduced by scripts/verify_label_map.py).",
+    "Per-class Sobel/intensity texture statistics corroborate each assignment independently (see table in reports/dataset_verification.md).",
+    "The resulting order is the alphabetical order of the standard NEU-CLS folder names, which is what torchvision ImageFolder would produce - consistent with how the mirror was most likely built."
+  ],
+  "index_to_name": {
+    "0": "crazing",
+    "1": "inclusion",
+    "2": "patches",
+    "3": "pitted_surface",
+    "4": "rolled-in_scale",
+    "5": "scratches"
+  },
+  "index_to_abbrev": {
+    "0": "Cr",
+    "1": "In",
+    "2": "Pa",
+    "3": "PS",
+    "4": "RS",
+    "5": "Sc"
+  }
+}

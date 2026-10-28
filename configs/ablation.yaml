@@ -1,0 +1,80 @@
+# Nine-stage component ablation.
+#
+# Run at 5% of the training split (61 images, ~10 per class), over 3 seeds.
+#
+# The fraction is chosen from the measured learning curve, not guessed. The
+# capacity suite shows SAGE-HE at 99.72% test accuracy on 15% of the data and
+# 99.17% on 10% -- both still at ceiling, where an ablation would rank noise
+# and present it as evidence. At 5% it sits at 88.33%, leaving ~12 points of
+# headroom for a component to move. 61 images is a noisy regime, so every
+# stage is repeated over 3 seeds and reported as mean +/- standard deviation.
+#
+# Validation and test splits are never subsampled: all stages are scored on
+# the same 360 held-out images as every other experiment.
+suite: ablation
+train_fraction: 0.05
+seeds: [42, 1337, 2024]
+
+shared:
+  image_size: 160
+  pipeline: sage
+  contrast: clahe
+  epochs: 20
+  lr: 0.0003
+  patience: 8
+
+stages:
+
+  - name: abl/1_baseline_cnn
+    description: Stage 1 — the base paper's CNN.
+    model: jia_baseline
+    image_size: 112
+    pipeline: jia_baseline
+    contrast: histeq
+    activation: square
+    epochs: 60
+    lr: 0.001
+    patience: 15
+
+  - name: abl/2_global_only
+    description: Stage 2 — EfficientNet-B0 global branch alone.
+    use_local: false
+
+  - name: abl/3_local_only
+    description: Stage 3 — multi-scale local CNN alone.
+    use_global: false
+    use_attention: false
+
+  - name: abl/4_dual_concat
+    description: Stage 4 — both branches, plain concatenation.
+    fusion: concat
+    use_attention: false
+
+  - name: abl/5_dual_attention
+    description: Stage 5 — both branches, scalar attention fusion.
+    fusion: attention
+    use_attention: false
+
+  - name: abl/6_dual_gated
+    description: Stage 6 — both branches, channel-wise gated fusion.
+    fusion: gated
+    use_attention: false
+
+  - name: abl/7_chunk_attention
+    description: Stage 7 — + Sobel-gated adaptive chunk selection. This is SAGE-HE.
+    fusion: gated
+    use_attention: true
+    use_sobel: true
+
+  - name: abl/8_chunk_attention_no_sobel
+    description: >
+      Control for stage 7: learned chunk attention with the Sobel term removed
+      from the chunk score. The difference between stages 7 and 8 is the
+      gradient prior's contribution and nothing else.
+    fusion: gated
+    use_attention: true
+    use_sobel: false
+
+# Stage 9 of the brief — "final model with encrypted inference" — is not a
+# training run. It reuses the stage-7 weights and is measured by
+# scripts/run_encrypted_eval.py; see results/encryption_benchmarks/.

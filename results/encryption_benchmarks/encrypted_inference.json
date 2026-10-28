@@ -1,0 +1,83 @@
+{
+  "params": {
+    "poly_modulus_degree": 16384,
+    "coeff_mod_bit_sizes": [
+      60,
+      40,
+      40,
+      40,
+      60
+    ],
+    "global_scale_bits": 40
+  },
+  "security_note": "n=16384, 240 modulus bits (<= 438 permitted at 128-bit security): meets 128-bit classical security",
+  "n_samples": 360,
+  "compressed_dim": 64,
+  "keygen_seconds": 0.986686861000635,
+  "key_sizes_bytes": {
+    "server_context_bytes": 122498246,
+    "client_context_bytes": 1675513
+  },
+  "ciphertext_bytes": 855565,
+  "plaintext_vector_bytes": 256,
+  "expansion_factor": 3342.05078125,
+  "encrypt_ms": {
+    "mean": 16.843830094401508,
+    "std": 5.116694505789987,
+    "median": 14.912486498360522,
+    "p95": 26.78067154793098,
+    "min": 14.190869998856215,
+    "max": 47.86963100195862,
+    "n": 360
+  },
+  "he_inference_ms": {
+    "mean": 1415.4035637055333,
+    "std": 209.7109800246122,
+    "median": 1362.455640997723,
+    "p95": 1866.0510058978618,
+    "min": 1178.2012490002671,
+    "max": 2480.1530270015064,
+    "n": 360
+  },
+  "decrypt_ms": {
+    "mean": 1.7285230972346552,
+    "std": 3.753802255923514,
+    "median": 1.2498255000537029,
+    "p95": 1.9753116985157249,
+    "min": 1.1367709994374309,
+    "max": 41.84668800007785,
+    "n": 360
+  },
+  "total_ms": {
+    "mean": 1433.9759168971696,
+    "std": 210.3156268616288,
+    "median": 1379.6748199965805,
+    "p95": 1887.806696752523,
+    "min": 1193.87651299985,
+    "max": 2504.2290029996366,
+    "n": 360
+  },
+  "plaintext_inference_ms": {
+    "mean": 0.33800725013861666,
+    "std": 1.7178820060903195,
+    "median": 0.22460649961431045,
+    "p95": 0.37417384719447006,
+    "min": 0.19165100093232468,
+    "max": 32.82481899805134,
+    "n": 360
+  },
+  "agreement_rate": 1.0,
+  "n_disagreements": 0,
+  "max_abs_logit_error": 0.014297692046550292,
+  "mean_abs_logit_error": 0.0027660207555535443,
+  "max_rel_logit_error": 0.06424378923165316,
+  "min_decision_margin": 3.6128936444298874,
+  "mean_decision_margin": 4.740949907131524,
+  "error_to_margin_ratio": 0.00791481480147831,
+  "peak_rss_mb": 1477.55859375,
+  "accuracy_plaintext": 1.0,
+  "accuracy_encrypted": 1.0,
+  "disagreement_indices": [],
+  "experiment": "main/sage_he_seed42",
+  "client_feature_extraction_ms": 37.90604041944082
+}

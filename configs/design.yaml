@@ -1,0 +1,59 @@
+# Design studies: the choices that would otherwise be asserted rather than measured.
+#
+# Run in the same reduced-data regime as the ablation, for the same reason: at
+# 10% of the data and above the model is already at ceiling, so a resolution or
+# contrast change would show no difference whatever its real effect. Seeded
+# because 61 training images is noisy enough that a single run could reverse
+# any of these comparisons.
+suite: design
+train_fraction: 0.05
+seeds: [42, 1337, 2024]
+
+shared:
+  model: sage_he
+  image_size: 160
+  pipeline: sage
+  contrast: clahe
+  epochs: 20
+  lr: 0.0003
+  patience: 8
+
+studies:
+
+  - group: input resolution
+    rationale: >
+      NEU-CLS is natively 200x200. Crazing and scratches are fine-structure
+      classes, so downsampling could plausibly cost accuracy. 160 is the
+      default; this study tests whether that compromise is justified.
+    runs:
+      - {name: design/res_112, image_size: 112}   # the base paper's size
+      - {name: design/res_200, image_size: 200}   # native, no resampling
+
+  - group: contrast enhancement
+    rationale: >
+      SAGE-HE uses CLAHE where the base paper uses global histogram
+      equalisation. Global equalisation applies one intensity mapping to the
+      whole frame and tends to crush the low-contrast crazing texture. This
+      study measures whether the change earns its place.
+    runs:
+      - {name: design/contrast_none,   contrast: none}
+      - {name: design/contrast_histeq, contrast: histeq}
+
+  - group: compressed dimension
+    rationale: >
+      d sets ciphertext size, encryption time and homomorphic-evaluation
+      latency. Paired with scripts/run_encrypted_eval.py --sweep, this gives
+      the accuracy/cost trade-off curve rather than an assumed value.
+    runs:
+      - {name: design/compress_32,  compressed_dim: 32}
+      - {name: design/compress_128, compressed_dim: 128}
+      - {name: design/compress_256, compressed_dim: 256}
+
+  - group: hard top-k chunk selection
+    rationale: >
+      The base paper keeps a hard subset of chunks. These runs test whether
+      forcing hard selection on top of the learned soft attention helps or
+      simply discards usable signal.
+    runs:
+      - {name: design/topk_4, top_k: 4}    # 4 of 16 chunks
+      - {name: design/topk_8, top_k: 8}    # 8 of 16 chunks

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "sage_he",
+    "file": "checkpoints/sage_he.pt",
+    "size_mb": 18.45,
+    "source_experiment": "main/sage_he_seed42",
+    "test_accuracy": 1.0
+  },
+  {
+    "name": "jia_baseline",
+    "file": "checkpoints/jia_baseline.pt",
+    "size_mb": 0.14,
+    "source_experiment": "main/jia_baseline_seed42",
+    "test_accuracy": 0.9472222222222222
+  }
+]

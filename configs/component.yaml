@@ -1,0 +1,38 @@
+# Targeted component study: does the proposed architecture beat its own backbone?
+#
+# The 5% ablation says no — plain EfficientNet-B0 outscores every variant that
+# adds the local branch and the chunk attention. That could in principle be an
+# artefact of the very-low-data regime, where a from-scratch branch has no
+# chance to learn anything useful. This study tests that directly.
+#
+# Only 10% of the training data, and only two configurations. The measured
+# learning curve puts SAGE-HE at 99.17% macro F1 on 10% and 98.34% on 25%, so
+# by 25% both arms are at ceiling and the contrast cannot discriminate. 10% is
+# the first point above the degenerate 5% regime, which is what this needs.
+#
+# Seeds are matched across the two arms so the comparison is paired.
+suite: component
+train_fraction: 0.10
+seeds: [42, 1337, 2024]
+
+shared:
+  model: sage_he
+  image_size: 160
+  pipeline: sage
+  contrast: clahe
+  epochs: 20
+  lr: 0.0003
+  patience: 8
+
+arms:
+  - name: component/global_only_010_seed{seed}
+    description: EfficientNet-B0 backbone alone — no local branch, no chunk attention.
+    use_local: false
+
+  - name: component/full_sage_010_seed{seed}
+    description: Full SAGE-HE — dual branch, Sobel-gated chunk attention, gated fusion.
+    use_local: true
+    use_global: true
+    use_attention: true
+    use_sobel: true
+    fusion: gated

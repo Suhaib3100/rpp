@@ -1,0 +1,172 @@
+{
+  "published_spec_conformance": {
+    "total_images": 1800,
+    "expected_total": 1800,
+    "n_classes": 6,
+    "per_class_counts": {
+      "0": 300,
+      "1": 300,
+      "2": 300,
+      "3": 300,
+      "4": 300,
+      "5": 300
+    },
+    "per_class_all_300": true,
+    "dimensions": [
+      [
+        200,
+        200
+      ]
+    ]
+  },
+  "exact_duplicates": {
+    "n_duplicate_groups": 1,
+    "groups": [
+      {
+        "sha256": "2674e119fd69aaa9",
+        "files": [
+          "train_00483_cls2.png",
+          "train_00487_cls2.png"
+        ]
+      }
+    ]
+  },
+  "near_duplicate_audit": [
+    {
+      "resolution": 32,
+      "highpass": false,
+      "max_similarity": 0.9896265268325806,
+      "mean_similarity": 0.7245638370513916,
+      "n_ge_095": 30,
+      "n_ge_090": 66,
+      "top_match_same_class_pct": 50.0,
+      "best_cross_class_mean": 0.6895287036895752,
+      "best_cross_class_max": 0.9842814803123474
+    },
+    {
+      "resolution": 64,
+      "highpass": false,
+      "max_similarity": 0.987175703048706,
+      "mean_similarity": 0.6853451132774353,
+      "n_ge_095": 25,
+      "n_ge_090": 58,
+      "top_match_same_class_pct": 48.333333333333336,
+      "best_cross_class_mean": 0.6508652567863464,
+      "best_cross_class_max": 0.9802423119544983
+    },
+    {
+      "resolution": 128,
+      "highpass": false,
+      "max_similarity": 0.9857981204986572,
+      "mean_similarity": 0.6609772443771362,
+      "n_ge_095": 15,
+      "n_ge_090": 48,
+      "top_match_same_class_pct": 44.44444444444444,
+      "best_cross_class_mean": 0.6270055174827576,
+      "best_cross_class_max": 0.9768422842025757
+    },
+    {
+      "resolution": 128,
+      "highpass": true,
+      "max_similarity": 0.8481319546699524,
+      "mean_similarity": 0.32488468289375305,
+      "n_ge_095": 0,
+      "n_ge_090": 0,
+      "top_match_same_class_pct": 50.0,
+      "best_cross_class_mean": 0.26118698716163635,
+      "best_cross_class_max": 0.5454955697059631
+    }
+  ],
+  "leakage_conclusion": "No near-duplicate leakage. With low-frequency illumination removed (128px high-pass), no test image has a training match at or above 0.90 (max 0.848), and the best cross-class match (0.545) tracks the best same-class match, which is the signature of a shared nuisance variable rather than duplicated content. The high raw-pixel similarities at low resolution are an illumination artefact, not repeated crops.",
+  "class_texture_statistics": [
+    {
+      "index": 0,
+      "class": "crazing",
+      "mean_intensity": 146.61402208333337,
+      "std_intensity": 28.929212372724727,
+      "mean_gradient": 91.30216400023056,
+      "edge_pixel_pct": 37.07910416666667,
+      "vertical_horizontal_gradient_ratio": 0.9247670806528326
+    },
+    {
+      "index": 1,
+      "class": "inclusion",
+      "mean_intensity": 110.89550062500001,
+      "std_intensity": 14.259534650972702,
+      "mean_gradient": 15.291522718524964,
+      "edge_pixel_pct": 0.13464583333333333,
+      "vertical_horizontal_gradient_ratio": 0.7709105077648781
+    },
+    {
+      "index": 2,
+      "class": "patches",
+      "mean_intensity": 129.154931875,
+      "std_intensity": 54.17332279588189,
+      "mean_gradient": 75.0679618945526,
+      "edge_pixel_pct": 26.527708333333333,
+      "vertical_horizontal_gradient_ratio": 0.8464814105242552
+    },
+    {
+      "index": 3,
+      "class": "pitted_surface",
+      "mean_intensity": 172.58668125,
+      "std_intensity": 25.618130171888218,
+      "mean_gradient": 41.83398344380688,
+      "edge_pixel_pct": 7.799833333333334,
+      "vertical_horizontal_gradient_ratio": 0.8522152669953591
+    },
+    {
+      "index": 4,
+      "class": "rolled-in_scale",
+      "mean_intensity": 106.58859104166666,
+      "std_intensity": 15.007049995655022,
+      "mean_gradient": 41.138994600619874,
+      "edge_pixel_pct": 3.380458333333333,
+      "vertical_horizontal_gradient_ratio": 1.4200470963458647
+    },
+    {
+      "index": 5,
+      "class": "scratches",
+      "mean_intensity": 94.44596166666666,
+      "std_intensity": 25.238850271977753,
+      "mean_gradient": 26.35899369616138,
+      "edge_pixel_pct": 5.330500000000001,
+      "vertical_horizontal_gradient_ratio": 1.5021243938090578
+    }
+  ],
+  "splits": {
+    "train": {
+      "n": 1223,
+      "per_class": {
+        "0": 204,
+        "1": 204,
+        "2": 203,
+        "3": 204,
+        "4": 204,
+        "5": 204
+      }
+    },
+    "val": {
+      "n": 216,
+      "per_class": {
+        "0": 36,
+        "1": 36,
+        "2": 36,
+        "3": 36,
+        "4": 36,
+        "5": 36
+      }
+    },
+    "test": {
+      "n": 360,
+      "per_class": {
+        "0": 60,
+        "1": 60,
+        "2": 60,
+        "3": 60,
+        "4": 60,
+        "5": 60
+      }
+    }
+  }
+}

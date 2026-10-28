@@ -1,0 +1,7 @@
+{
+  "experiment": "main/sage_he_seed42",
+  "n_errors": 0,
+  "test_accuracy": 1.0,
+  "n_baseline_errors": 19,
+  "learned_sobel_weight_lambda": 0.9923849105834961
+}

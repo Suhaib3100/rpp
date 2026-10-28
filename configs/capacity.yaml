@@ -1,0 +1,33 @@
+# Learning curve: test performance against training-set size.
+#
+# This is the experiment that justifies the reduced-data ablation protocol. It
+# shows directly where the two architectures separate and where they are both
+# at ceiling, so the choice of ablation regime is an empirical finding rather
+# than a convenience.
+#
+# The 100% point is deliberately absent here: it is exactly the
+# `main/*_seed42` configuration, so the curve reuses those results instead of
+# retraining the same two models.
+suite: capacity
+seed: 42
+fractions: [0.05, 0.10, 0.15, 0.25, 0.50]   # 100% comes from the main suite
+
+experiments:
+
+  - name: capacity/sage_{pct}
+    model: sage_he
+    image_size: 160
+    contrast: clahe
+    epochs: 20
+    lr: 0.0003
+    patience: 8
+
+  - name: capacity/jia_{pct}
+    model: jia_baseline
+    image_size: 112
+    pipeline: jia_baseline
+    contrast: histeq
+    activation: square
+    epochs: 60
+    lr: 0.001
+    patience: 15

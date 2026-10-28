@@ -1,0 +1,50 @@
+[
+  {
+    "name": "design/compress_32_seed42",
+    "dim": 32,
+    "macro_f1": 0.5687587336719656,
+    "accuracy": 0.5916666666666667,
+    "n_seeds_averaged": 3,
+    "he_ms": 808.0350668498795,
+    "encrypt_ms": 16.68018967502576,
+    "ciphertext_bytes": 855898,
+    "agreement_rate": 1.0,
+    "accuracy_regime": "reduced-data design regime (61 training images), 3 seeds"
+  },
+  {
+    "name": "main/sage_he_seed42",
+    "dim": 64,
+    "macro_f1": 0.8937686128866503,
+    "accuracy": 0.8962962962962964,
+    "n_seeds_averaged": 3,
+    "he_ms": 1418.125004200283,
+    "encrypt_ms": 15.82846007495391,
+    "ciphertext_bytes": 855329,
+    "agreement_rate": 1.0,
+    "accuracy_regime": "reduced-data design regime (61 training images), 3 seeds"
+  },
+  {
+    "name": "design/compress_128_seed42",
+    "dim": 128,
+    "macro_f1": 0.9113163977552206,
+    "accuracy": 0.9111111111111111,
+    "n_seeds_averaged": 3,
+    "he_ms": 2864.436671400108,
+    "encrypt_ms": 16.133323850317538,
+    "ciphertext_bytes": 856112,
+    "agreement_rate": 1.0,
+    "accuracy_regime": "reduced-data design regime (61 training images), 3 seeds"
+  },
+  {
+    "name": "design/compress_256_seed42",
+    "dim": 256,
+    "macro_f1": 0.9066486923615867,
+    "accuracy": 0.9064814814814813,
+    "n_seeds_averaged": 3,
+    "he_ms": 5578.204044249742,
+    "encrypt_ms": 16.917256450051354,
+    "ciphertext_bytes": 855536,
+    "agreement_rate": 1.0,
+    "accuracy_regime": "reduced-data design regime (61 training images), 3 seeds"
+  }
+]

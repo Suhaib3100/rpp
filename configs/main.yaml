@@ -1,0 +1,48 @@
+# Main comparison: faithful baseline reproduction vs the proposed model.
+# Both are trained and evaluated on the identical split in data/splits.json,
+# which is what makes the comparison like-for-like. Three seeds each so the
+# difference can be reported with a spread rather than as a point estimate.
+suite: main
+seeds: [42, 1337, 2024]
+
+shared:
+  dataset: NEU-CLS
+  splits: data/splits.json          # 1223 train / 216 val / 360 test
+  select_metric: macro_f1           # validation loss breaks ties (see trainer)
+  optimizer: AdamW
+  schedule: cosine with linear warm-up (2 epochs)
+  label_smoothing: 0.05
+  grad_clip: 5.0
+
+experiments:
+
+  - name: main/jia_baseline_seed{seed}
+    model: jia_baseline
+    # Preprocessing and architecture follow the published description of
+    # Jia et al. (2023). Documented assumptions are in
+    # src/models/baseline_jia.py and reports/technical_report.md §4.
+    image_size: 112
+    pipeline: jia_baseline
+    contrast: histeq                # the paper's global histogram equalisation
+    activation: square              # their CKKS-compatible activation
+    epochs: 60                      # not reported by the paper; our choice
+    lr: 0.001
+    patience: 15
+
+  - name: main/sage_he_seed{seed}
+    model: sage_he
+    image_size: 160
+    pipeline: sage
+    contrast: clahe
+    fusion: gated
+    use_local: true
+    use_global: true
+    use_attention: true
+    use_sobel: true
+    compressed_dim: 64              # the width that gets encrypted
+    head_hidden: 32
+    chunk_grid: 4                   # 4x4 = 16 chunks, matching the base paper
+    pretrained: true
+    epochs: 20
+    lr: 0.0003
+    patience: 8

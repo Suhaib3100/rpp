@@ -1,0 +1,10 @@
+{
+  "global_branch": 4335420,
+  "local_branch": 190816,
+  "chunk_attention": 8322,
+  "fusion": 197120,
+  "compression": 16448,
+  "encrypted_head": 2278,
+  "total": 4750404,
+  "trainable": 4750404
+}
