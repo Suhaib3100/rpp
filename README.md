@@ -40,6 +40,12 @@ Only the 64-dimensional compressed vector crosses the boundary. The server
 holds a **public-only** CKKS context; `tests/test_encryption.py` asserts it
 cannot decrypt.
 
+## At a glance
+
+![What was built, what it proved, and what it disproved](results/figures/PROOF_summary.png)
+
+Supporting views: [`before_after_summary.png`](results/figures/before_after_summary.png) · [`how_100_achieved.png`](results/figures/how_100_achieved.png)
+
 ## Headline results
 
 See `reports/technical_report.md` for the full set — it is generated from
